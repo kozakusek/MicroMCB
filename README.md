@@ -6,7 +6,7 @@ Simple application created as a part of Microcontrollers Programming course at M
 
 The application works in sleep mode using interrupts to wake up the microcontroller. The interrupts are triggered by the accelerometer, buttons and the Bluetooth module. 
 
-The accelerometer is used to detect tilting of the device. After receiving the interrupt, the microcontroller reads the accelerometer data and sends 3 infomation bytes to the connected device via Bluetooth using USART. The first byte is the start byte (0x01), the second byte is the change in the X axis and the third byte is the change in the Y axis. The change is calculated with moving average by subtracting the current value from some set state. The change is then sent as a signed byte. The communication with the accelerometer is done using I2C.
+The accelerometer is used to detect tilting of the device. After receiving the interrupt, the microcontroller reads the accelerometer data and sends 3 infomation bytes to the connected device via Bluetooth using USART with DMA. The first byte is the start byte (0x01), the second byte is the change in the X axis and the third byte is the change in the Y axis. The change is calculated with moving average by subtracting the current value from some set state. The change is then sent as a signed byte. The communication with the accelerometer is done using I2C.
 The information from the accelerometer is sent every 10ms.
 
 ### Buttons
